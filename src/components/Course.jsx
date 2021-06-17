@@ -9,7 +9,7 @@ const Course = () => {
   };
 
   return (
-    <div class="course">
+    <div className="course">
       <h3>{data.title}</h3>
       <p>{data.description}</p>
       <button>View Lessons</button>
