@@ -30,19 +30,14 @@ const Course = (props) => {
   }
   return (
     <div className="course">
-   
       <h3>{title}</h3>
       <p>{description}</p>
       <button onClick={getLessons}>View Lessons</button>
-      {
-        // JSON.stringify(lessons)
-      }
       {
         displayLessons && <Lessons data={lessons}
         lessonsNotFound={ lessonsNotFound }
         />
       }
-     
     </div>
   );
 };

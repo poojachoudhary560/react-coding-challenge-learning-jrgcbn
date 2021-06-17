@@ -15,9 +15,6 @@ const CourseList = () => {
 
   return (
     <div>
-      
-      <h3>Course List</h3>
-      {courses.length}
       {courses.map(courseItem => {
         return <Course data={courseItem}/>;
       })}

@@ -4,7 +4,7 @@ const Lessons = (props) => {
  
   const allLessons = props.data
   return (
-    <div className="course">
+    <div className="course lesson">
    
       {
         allLessons.map((lesson, index) => {
@@ -19,7 +19,7 @@ const Lessons = (props) => {
         })
       }
        {
-        props.lessonsNotFound && <p>No Lessons Available for this course</p>
+        props.lessonsNotFound && <p>No Lessons available for this course.</p>
       }
     </div>
   );
