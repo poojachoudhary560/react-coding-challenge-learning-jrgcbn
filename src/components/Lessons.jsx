@@ -6,7 +6,6 @@ const Lessons = (props) => {
   return (
     <div className="course">
    
-      <p>lessons</p>
       {
         allLessons.map((lesson, index) => {
           return <>

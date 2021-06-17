@@ -6,6 +6,7 @@ const Course = (props) => {
   const {id, title, description} = props.data
   const [lessons, setLessons] = useState([]);
   const [lessonsNotFound, setLessonsNotFound] = useState(false);
+  const [displayLessons, setDisplayLessons] = useState(false);
 
   const getLessons = () => {
    
@@ -15,9 +16,10 @@ const Course = (props) => {
     fetch(lessonsUrl)
       .then(res => res.json())
       .then(res => {
-        // let courseLessons = res.filter(item => item.courseId == id)
-        let courseLessons = []
+        let courseLessons = res.filter(item => item.courseId == id)
+        // let courseLessons = []
         setLessons(courseLessons)
+        setDisplayLessons(true)
         if(courseLessons.length === 0) {
           setLessonsNotFound(true)
         } else {
@@ -33,10 +35,10 @@ const Course = (props) => {
       <p>{description}</p>
       <button onClick={getLessons}>View Lessons</button>
       {
-        JSON.stringify(lessons)
+        // JSON.stringify(lessons)
       }
       {
-        <Lessons data={lessons}
+        displayLessons && <Lessons data={lessons}
         lessonsNotFound={ lessonsNotFound }
         />
       }
