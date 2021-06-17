@@ -1,20 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const Course = (data) => {
-  /*const data = {
-    id: '1',
-    title: 'ReactJS',
-    description:
-      'One of the simplest frameworks to learn – React – was developed at Facebook to fix code maintainability issues due to the constant addition of features in the app.'
-  }; */
+const Course = (props) => {
+ 
+  const {id, title, description} = props.data
+  const [lessons, setLessons] = useState([]);
 
+  const getLessons = () => {
+   
+    let lessonsUrl =
+      'https://6091056250c2550017677756.mockapi.io/learning/lessons';
+
+    fetch(lessonsUrl)
+      .then(res => res.json())
+      .then(res => {
+        let courseLessons = res.filter(item => item.courseId == id)
+        setLessons(courseLessons)
+        //setCourses(res);
+      });
+ 
+  }
   return (
     <div className="course">
-    { JSON.stringify(data)
-    }
-      <h3>{data.title}</h3>
-      <p>{data.description}</p>
-      <button>View Lessons</button>
+   
+      <h3>{title}</h3>
+      <p>{description}</p>
+      <button onClick={this.getLessons}>View Lessons</button>
+      {
+        JSON.stringify(lessons)
+      }
     </div>
   );
 };
