@@ -24,7 +24,7 @@ const Course = (props) => {
    
       <h3>{title}</h3>
       <p>{description}</p>
-      <button onClick={this.getLessons}>View Lessons</button>
+      <button onClick={getLessons}>View Lessons</button>
       {
         JSON.stringify(lessons)
       }
