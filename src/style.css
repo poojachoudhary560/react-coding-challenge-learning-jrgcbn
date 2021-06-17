@@ -1,0 +1,33 @@
+* {
+  font-family: Lato;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(0, 71, 186);
+}
+
+.course {
+  background-color: rgb(255, 255, 255);
+  padding: 1.25rem 2rem 2rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  box-shadow: rgb(0 0 0 / 13%) 0.0625rem 0.625rem 1.5625rem;
+  border-radius: 1.125rem;
+}
+
+.course h3 {
+  color: rgb(0, 71, 186);
+}
+
+.course button {
+  background: #f26178;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0.0625rem 0.625rem 1.5625rem rgb(0 0 0 / 13%);
+  color: white;
+  font-weight: 600;
+  line-height: 1.25;
+  cursor: pointer;
+}
