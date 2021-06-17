@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import Lessons from './Lessons';
 
 const Course = (props) => {
  
   const {id, title, description} = props.data
   const [lessons, setLessons] = useState([]);
+  const [lessonsCount, setLessonsCount] = useState(0);
 
   const getLessons = () => {
    
@@ -15,6 +17,7 @@ const Course = (props) => {
       .then(res => {
         let courseLessons = res.filter(item => item.courseId == id)
         setLessons(courseLessons)
+        setLessonsCount(courseLessons.length)
         //setCourses(res);
       });
  
@@ -27,6 +30,9 @@ const Course = (props) => {
       <button onClick={getLessons}>View Lessons</button>
       {
         JSON.stringify(lessons)
+      }
+      {
+        lessonsCount>0 && <Lessons data={lessons}/>
       }
     </div>
   );
