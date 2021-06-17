@@ -1,5 +1,5 @@
 import React from 'react';
-import Course from './components/Course';
+
 import CourseList from './components/CourseList';
 import './style.css';
 
@@ -16,7 +16,6 @@ export default function App() {
     <div>
       <h1>Courses</h1>
       <CourseList />
-      <Course />
     </div>
   );
 }

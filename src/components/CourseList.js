@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-
+// import axios from 'axios';
+import Course from './Course';
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
@@ -29,6 +29,12 @@ const CourseList = () => {
     <div>
       {JSON.stringify(courses)}
       <h3>Course List</h3>
+      {courses.map(courseItem => {
+        {
+          courseItem.id;
+        }
+        <Course />;
+      })}
     </div>
   );
 };
