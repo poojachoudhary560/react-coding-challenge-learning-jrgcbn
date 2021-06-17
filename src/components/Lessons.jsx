@@ -19,7 +19,7 @@ const Lessons = (props) => {
         })
       }
        {
-        props.lessonsNotFound && <p>No LEssons Available for this course</p>
+        props.lessonsNotFound && <p>No Lessons Available for this course</p>
       }
     </div>
   );
