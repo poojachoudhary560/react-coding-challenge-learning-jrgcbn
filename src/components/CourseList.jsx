@@ -27,13 +27,11 @@ const CourseList = () => {
 
   return (
     <div>
-      {JSON.stringify(courses)}
+      
       <h3>Course List</h3>
+      {courses.length}
       {courses.map(courseItem => {
-        {
-          courseItem.id;
-        }
-        <Course />;
+        return <Course data={courseItem}/>;
       })}
     </div>
   );
